@@ -9,7 +9,7 @@ import {
   deleteRecipe,
   getRecipesBySearch,
 } from "../controllers/recipes.js";
-router.get("/recipes", getAllRecipes);
+router.get("/", getAllRecipes);
 router.get("/recipe/:id", getSingleRecipe);
 router.get("/search", getRecipesBySearch);
 router.post("/recipes", recipeValidations(), createRecipe);

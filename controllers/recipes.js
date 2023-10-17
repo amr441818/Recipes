@@ -33,7 +33,7 @@ export const getRecipesBySearch = async (req, res, next) => {
   try {
     const title = new RegExp(searchQuery, "i");
 
-    const recipes = await RecipeModel.find({
+    let recipes = await RecipeModel.find({
       $or: [{ title }, { ingredients: { $in: ingredients.split(",") } }],
     });
     res.status(200).json({ data: recipes });
